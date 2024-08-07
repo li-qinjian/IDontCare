@@ -1,128 +1,168 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectGuid>{8D0E490E-AAAB-49BC-A467-9E8D3964FA07}</ProjectGuid>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <OutputPath>$(BANNERLORD_GAME_DIR)\Modules\IDontCare\bin\Win64_Shipping_Client</OutputPath>
-    <DocumentationFile>
-    </DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <PropertyGroup>
-    <RootNamespace>IDontCare</RootNamespace>
-  </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Constants\InformationType.cs" />
-    <Compile Include="Constants\FilterMode.cs" />
-    <Compile Include="Extensions\DropdownExtensions.cs" />
-    <Compile Include="Extensions\IFactionExtensions.cs" />
-    <Compile Include="Filtering\Debug.cs" />
-    <Compile Include="Filtering\FilteringMethods.cs" />
-    <Compile Include="Filtering\LogEntries\ArmyDispersionLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\BattleStartedLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\BesiegeSettlementLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\CharacterBornLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\CharacterInsultedLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\CharacterKilledLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\CharacterMarriedLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\ChildbirthLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\ClanChangeKingdomLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\DeclareWarLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\EndCaptivityLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\ILogEntryFilter.cs" />
-    <Compile Include="Filtering\LogEntries\GatherArmyLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\KingdomDecisionConcludedLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\KingdomDestroyedLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\LogFilteringAssignments.cs" />
-    <Compile Include="Filtering\LogEntries\MakePeaceLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\MercenaryClanChangedKingdomLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\PlayerBattleEndedLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\PregnancyLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\RebellionStartedLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\SettlementClaimedLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\TakePrisonerLogEntryFiltered.cs" />
-    <Compile Include="Filtering\LogEntries\TournamentWonLogEntryFiltered.cs" />
-    <Compile Include="Filtering\AdvancedFiltering.cs" />
-    <Compile Include="Menu\IDontCareMenu.Debug.cs" />
-    <Compile Include="Menu\IDontCareMenu.Advanced.cs" />
-    <Compile Include="Menu\IDontCareMenu.GlobalSettings.cs" />
-    <Compile Include="Menu\IDontCareMenu.LogEntries.cs" />
-    <Compile Include="Menu\IDontCareMenu.ModCompatibility.ServeAsSoldier.cs" />
-    <Compile Include="Patches\LogEntriesPatch.cs" />
-    <Compile Include="Menu\IDontCareMenu.cs" />
-    <Compile Include="Patches\CustomLogsPatches.cs" />
-    <Compile Include="Patches\NotificationPatches.cs" />
-    <Compile Include="SubModule.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ModuleData\Languages\JP\language_data.xml" />
-    <Content Include="ModuleData\Languages\JP\strings_JP.xml" />
-    <Content Include="ModuleData\Languages\language_data.xml" />
-    <Content Include="ModuleData\Languages\strings_EN.xml" />
-    <Content Include="SubModule.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Bannerlord.ButterLib">
-      <Version>2.9.8</Version>
-      <IncludeAssets>build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-    <PackageReference Include="Bannerlord.MCM">
-      <Version>5.10.1</Version>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Bannerlord.ReferenceAssemblies.Core">
-      <Version>1.2.9.38256</Version>
-    </PackageReference>
-    <PackageReference Include="Bannerlord.UIExtenderEx">
-      <Version>2.11.0</Version>
-      <IncludeAssets>build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-    <PackageReference Include="Lib.Harmony">
-      <Version>2.3.3</Version>
-      <PrivateAssets>all</PrivateAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Menu\IDontCareMenu.Notifications.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
-    <Copy SourceFiles="SubModule.xml" DestinationFolder="$(OutDir)..\..\" />
-    <Copy SourceFiles="ModuleData\Languages\language_data.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages" />
-    <Copy SourceFiles="ModuleData\Languages\strings_EN.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages" />
-    <Copy SourceFiles="ModuleData\Languages\JP\language_data.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages\JP" />
-    <Copy SourceFiles="ModuleData\Languages\JP\strings_JP.xml" DestinationFolder="$(OutDir)..\..\ModuleData\Languages\JP" />
-  </Target>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="env.xml" />
+
+    <PropertyGroup>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+        <PlatformTarget>x64</PlatformTarget>
+        <LangVersion>10.0</LangVersion>
+        <TargetFramework>net472</TargetFramework>
+        <AfterLoadModule>*UsefulSkips</AfterLoadModule>
+    </PropertyGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\PostBuild.ps1 -Name &quot;$(ProjectName)&quot; -Dll &quot;$(TargetPath)&quot; -Pdb &quot;$(TargetDir)$(ProjectName).pdb&quot; -Game &quot;$(GamePath)&quot; -Config $(Configuration)" />
+    </Target>
+
+    <ItemGroup>
+        <Reference Include="TaleWorlds.CampaignSystem">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.CampaignSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Core">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.ObjectSystem">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.ObjectSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Core.ViewModelCollection">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Diamond.AccessProvider.Epic">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Diamond.AccessProvider.Epic.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Diamond.AccessProvider.Steam">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Diamond.AccessProvider.Steam.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Diamond.AccessProvider.Test">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Diamond.AccessProvider.Test.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Diamond">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Diamond.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.DotNet.AutoGenerated">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.DotNet.AutoGenerated.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.DotNet">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.DotNet.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Engine.AutoGenerated">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Engine.AutoGenerated.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Engine">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Engine.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Engine.GauntletUI">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Engine.GauntletUI.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.GauntletUI.Data">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.GauntletUI.Data.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.GauntletUI">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.GauntletUI.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.GauntletUI.ExtraWidgets">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.GauntletUI.ExtraWidgets.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.GauntletUI.PrefabSystem">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.GauntletUI.PrefabSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.GauntletUI.TooltipExtensions">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.GauntletUI.TooltipExtensions.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.InputSystem">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.InputSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Library">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Library.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Localization">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Localization.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.MountAndBlade.AutoGenerated">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.AutoGenerated.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.MountAndBlade.Diamond">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.Diamond.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.MountAndBlade">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.MountAndBlade.GauntletUI.Widgets">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.GauntletUI.Widgets.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.MountAndBlade.Helpers">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.Helpers.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.MountAndBlade.ViewModelCollection">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.ViewModelCollection.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.NavigationSystem">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.NavigationSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Network">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Network.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.PlatformService">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.PlatformService.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.PlatformService.Epic">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.PlatformService.Epic.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.PlatformService.Steam">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.PlatformService.Steam.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.PlayerServices">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.PlayerServices.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.PSAI">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.PSAI.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.SaveSystem">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.SaveSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.Starter.Library">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.Starter.Library.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.TwoDimension">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.TwoDimension.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.TwoDimension.Standalone">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.TwoDimension.Standalone.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.ScreenSystem">
+            <HintPath>$(GamePath)\bin\Win64_Shipping_Client\TaleWorlds.ScreenSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="TaleWorlds.MountAndBlade.View">
+            <HintPath>$(GamePath)\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.View.dll</HintPath>
+        </Reference>
+        <Reference Include="SandBox">
+            <HintPath>$(GamePath)\Modules\SandBox\bin\Win64_Shipping_Client\SandBox.dll</HintPath>
+        </Reference>
+        <Reference Include="SandBox.GauntletUI">
+            <HintPath>$(GamePath)\Modules\SandBox\bin\Win64_Shipping_Client\SandBox.GauntletUI.dll</HintPath>
+        </Reference>
+        <Reference Include="SandBox.View">
+            <HintPath>$(GamePath)\Modules\SandBox\bin\Win64_Shipping_Client\SandBox.View.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Nullable" Version="1.3.1" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+        <PackageReference Include="IsExternalInit" Version="1.0.3" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+        <PackageReference Include="Bannerlord.BuildResources" Version="1.1.0.104" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+        <PackageReference Include="Bannerlord.Lib.Harmony" Version="2.2.2" IncludeAssets="compile" />
+        <PackageReference Include="Harmony.Extensions" Version="3.2.0.77" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+        <PackageReference Include="BUTR.Harmony.Analyzer" Version="1.0.1.50" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+        <PackageReference Include="Bannerlord.UIExtenderEx" Version="2.8.0" IncludeAssets="compile" />
+        <PackageReference Include="Bannerlord.ButterLib" Version="2.8.11" IncludeAssets="compile" />
+        <PackageReference Include="Bannerlord.MCM" Version="5.9.1" IncludeAssets="compile" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" PrivateAssets="all" IncludeAssets="compile" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
 </Project>
