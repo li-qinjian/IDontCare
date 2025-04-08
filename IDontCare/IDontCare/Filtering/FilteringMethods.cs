@@ -84,6 +84,10 @@ namespace IDontCare.Filtering
                     return false;
             }
 
+            //Markeed Hero.
+            if (!shouldPlayerCare && Campaign.Current.EncyclopediaManager.ViewDataTracker.IsEncyclopediaBookmarked(heroInvolved))
+                return true;
+
             return shouldPlayerCare;
         }
 
